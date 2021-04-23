@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost:27017/todolistDB", {useUnifiedTopology: true});
+mongoose.connect("mongodb+srv://admin-sudha:Test123@cluster0.dl1n2.mongodb.net/todolistDB?retryWrites=true/todolistDB", {useUnifiedTopology: true});
 
 const itemSchema = new mongoose.Schema ({
   name: String
@@ -140,7 +140,12 @@ app.post("/delete", function(req, res){
   }
 });
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
 
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log("Server started on port 3000");
 });
