@@ -1,6 +1,5 @@
 ### To-Do List
 This website has a to-do list in which one can add their daily tasks to be done.
-[Find the deployed website here.](todo-list-doitnow.herokuapp.com)
 
 ## Features
 - Add to-do tasks to the list
